@@ -1,8 +1,5 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Productos from './layouts/productos'
 import './App.css'
 
 function App() {
@@ -17,25 +14,25 @@ function App() {
       <main>
         <nav className='navegacionPrincipal'>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contacto</a></li>
+            <li><a href="/producto">Producto</a></li>
+            <li><a href="/carrito">Carrito</a></li>
+            <li><a href='/añadirCarrito'>Añadir carrito</a></li>
+            <li><a href='/añadirProducto'></a>Añadir producto</li>
           </ul>
         </nav>  
 
-        <section>
+        
         <Routes>
-          <Route exact path="/">
+          <Route path="/">
             
           </Route>
-          <Route path="/about">
-            
+          <Route path="/producto" element= {<Productos/>}>
           </Route>
           <Route path="/contact">
             
           </Route>
         </Routes>
-        </section>
+        
         
       </main>
       <footer>

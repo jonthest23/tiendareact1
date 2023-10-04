@@ -20,14 +20,36 @@ body {
   padding: 0;
 }
 
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  display: contents;
+}
+section{
+  height: calc(100vh - 70px);
+  overflow: scroll;
+}
+
 header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 1rem;
   background-color: #686868;
   color: #ffffff;
+  height: 70px;
 }
+main {
+  display: flex;
+   height: calc(100vh - 70px);
+
+}
+
 footer{
   display: flex;
   position: absolute;
@@ -45,6 +67,8 @@ footer{
   display: flex;
   height: 100%;
   background-color: #3f4052;
+  height: 100%;
+ 
 
 }
 
