@@ -9,15 +9,16 @@ export interface Articulo {
     description: string
 }
 
+
 export interface carrito {
     id: number,
     userId: number,
     date: string,
-    products: [ {
+    products:  {
         productId: number,
         quantity: number
-     }
-    ]
+     } []
+    
 }
 
 export interface Usuario {

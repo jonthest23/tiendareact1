@@ -8,6 +8,18 @@ export default class fakeStoreApi {
         timeout: 10000,
       
       })
+      agregarCarrito = async (carrito:carrito) => {
+        await this.fakestoreapi.post('carts', carrito)
+        .then(respuesta => {
+            console.log(respuesta.data)
+            alert("se agrego el carrito " + respuesta.data.id + " satisfactoriamente =)")
+        })
+        .catch(error => {
+            throw error
+        });
+        
+        
+      }
 
      enviarArticulo = async (articulo:Articulo) => {
         await this.fakestoreapi.post('products', articulo)

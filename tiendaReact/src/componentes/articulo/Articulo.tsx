@@ -1,5 +1,5 @@
 import { Articulo as ArticuloI } from '../../interface/interfaces'
-
+import './articulo.css'
 interface propsArticulo {
     articulo: ArticuloI
   }

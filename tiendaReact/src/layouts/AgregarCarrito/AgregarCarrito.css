@@ -1,14 +1,11 @@
 #formularioCarrito{
-    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
     align-items: center;
     text-align: center;
     margin: 20px;
 }
 
 #formularioCarrito input {
-    width: 100%;
     padding: 10px;
     margin: 10px;
     border: 1px solid #ccc;
@@ -17,4 +14,9 @@
 
 #titulo {
     margin: 20px;
+}
+
+.inputArticulo {
+    display : grid;
+    grid-template-columns: 1fr 1fr;
 }
