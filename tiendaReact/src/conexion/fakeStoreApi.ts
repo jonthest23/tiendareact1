@@ -1,7 +1,5 @@
 import axios from 'axios'
-import { Articulo } from '../interface/interface'
-import { carrito } from '../interface/interface'
-import { Usuario } from '../interface/interface'
+import { Articulo, carrito, Usuario } from '../interface/interfaces'
 
 
 export default class fakeStoreApi {
@@ -18,6 +16,7 @@ export default class fakeStoreApi {
             console.log(respuesta.data)
         })
         .catch(error => {
+          alert("no se pudo agregar el articulo")
           console.log(error.toJSON())
         });
         
@@ -58,6 +57,16 @@ export default class fakeStoreApi {
         
         
         
+    }
+
+    obtenerCarritos = async (): Promise<Array<carrito>> => {
+        return await this.fakestoreapi.get('carts')
+        .then(respuesta => {
+            return respuesta.data
+        })
+        .catch(error => {
+            throw error
+        })
     }
     obtenerUsuario = async (id:number): Promise<Usuario> => {
          return await this.fakestoreapi.get('users/' + id)

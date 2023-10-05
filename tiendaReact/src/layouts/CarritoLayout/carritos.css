@@ -1,0 +1,35 @@
+#contenedorCarritos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    height: fit-content;
+    
+}
+
+
+
+@media screen and (max-width: 1529px) {
+    #contenedorCarritos{
+        grid-template-columns: 1fr 1fr 1fr ;
+    }
+}
+
+
+
+ @media screen and (max-width: 1200px) {
+    #contenedorCarritos{
+        grid-template-columns: 1fr 1fr;
+    }
+    
+ }
+    @media screen and (max-width: 850px) {
+        #contenedorCarritos{
+            grid-template-columns: 1fr;
+            height: 100%;
+        }
+        
+    }
+
+
+
+    
+ 

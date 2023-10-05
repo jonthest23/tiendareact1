@@ -32,8 +32,10 @@ ul {
   display: contents;
 }
 section{
-  height: calc(100vh - 70px);
-  overflow: scroll;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  overflow-x: hidden;
 }
 
 header {
@@ -46,7 +48,7 @@ header {
 }
 main {
   display: flex;
-   height: calc(100vh - 70px);
+   height: calc(100vh - 126px);
 
 }
 
@@ -82,8 +84,13 @@ footer{
 
 }
 .navegacionPrincipal ul li {
+  color: #ffffff;
   padding: 10px;
   border-bottom: 1px solid #ffffff;
+}
+.navegacionPrincipal ul li a {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 
