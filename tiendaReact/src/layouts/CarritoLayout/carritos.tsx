@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import  ErrorServicio  from "../../componentes/errors/errores";
 import Carrito from "../../componentes/Carrito/Carrito";
 import Cargando from "../../componentes/Cargando/Cargando";
+import CarritoDetalle from "../../componentes/CarritoDetalle/CarritoDetalle";
 import './carritos.css';
 
 
@@ -14,6 +15,8 @@ export default function CarritosLayout() {
     const [carritos, setCarritos] = useState<carrito[]>([]);
     const [cargando, setCargando] = useState(false);
     const [errorServicio, setErrorServicio] = useState(false);
+    const [carritoSeleccionado, setCarritoSeleccionado] = useState<carrito | null>(null);
+    
 
     const obtenerCarritos = async (): Promise<void> => {
         try {
@@ -28,6 +31,13 @@ export default function CarritosLayout() {
         } catch (error) {
             console.error(error);
         }
+    }
+    
+    function mostrarDetalle(carrito: carrito) {
+        setCarritoSeleccionado(carrito);
+    }
+    function esconderDetalle() {
+        setCarritoSeleccionado(null);
     }
 
     useEffect(() => {
@@ -50,13 +60,17 @@ export default function CarritosLayout() {
                 <ul>
                     {carritos.map((carrito) => {
                         return (
+                            
                             <li key={carrito.id}>
-                                <Carrito carrito={carrito} />
+                                <Carrito carrito={carrito} abrirDetalle={mostrarDetalle} />
                             </li>
+                            
                         );
                     })}
                 </ul>
+                <CarritoDetalle carrito={carritoSeleccionado}  esconderDetalle={esconderDetalle} />
             </section>
+            
         )
     }
 }

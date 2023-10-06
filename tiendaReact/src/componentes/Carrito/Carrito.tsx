@@ -2,9 +2,14 @@ import { carrito } from "../../interface/interfaces"
 import './carrito.css'
 interface propsCarrito{
     carrito: carrito
+    abrirDetalle: Function
 }
 
 export default function Carrito(props: propsCarrito){ 
+
+    function abrirDetalle(){
+        props.abrirDetalle(props.carrito)
+    }
     return(
         <div className='contenedorCarrito'>
             <h1>carrito #{props.carrito.id}</h1>
@@ -19,7 +24,7 @@ export default function Carrito(props: propsCarrito){
             })()}</p>
 
 
-            <button>
+            <button onClick={abrirDetalle}>
                 ver detalle
             </button>
         </div>
