@@ -1,6 +1,7 @@
 #contenedorArticulos {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: inherit;
     justify-content: space-around;
   }
   
